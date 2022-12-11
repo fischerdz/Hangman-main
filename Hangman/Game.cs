@@ -26,6 +26,9 @@ namespace Hangman
             Game currentGame = new Game();
             currentGame.PlayGame();
         }
+
+        // main game loop
+        // game continues until won or 0 lives. Exits with a message (You lost or you won).
         public void PlayGame()
         {
             Console.WriteLine("Hello and welcome to a round of Hangman. Your word has been chosen");
@@ -65,6 +68,7 @@ namespace Hangman
             mainMenu.DisplayMainMenu();
         }
 
+        // draws the word with correctly guessed letters (* for unguessed ones)
         public int DrawLetters()
         {
             int rightChars = 0;
@@ -87,6 +91,7 @@ namespace Hangman
             return rightChars;
         }
 
+        // Asks user for input and returns guessed letter if valid.
         public char TakeLetter()
         {
             Console.WriteLine("Guess a letter! ");
@@ -102,6 +107,7 @@ namespace Hangman
             }
         }
 
+        // Checks guessed input for letter a-z that hasnt been guessed yet.
         public Boolean CheckValidity(string guess)
         {
             if (!Regex.IsMatch(guess, @"^[a-z]$"))

@@ -22,6 +22,8 @@ namespace Hangman
         {
             return this.wordLetters;
         }
+
+        // Loads list of words from csv and returns them in a list.
         public static List<string> LoadList()
         {
             List<string> wordList = new List<string>();
@@ -39,6 +41,7 @@ namespace Hangman
             return wordList;
         }
 
+        // picks random word from loaded list
         public static List<char> PickWord() 
         {
             Random rnd = new Random();

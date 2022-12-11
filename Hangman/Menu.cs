@@ -30,6 +30,8 @@ namespace Hangman
             Environment.Exit(0);
         }
 
+        // Reads key and checks if its in dictionary. If not shows menu again.
+        // Loops until valid input, then invokes dictionary method.
         public void CheckForKey()
         {
             ConsoleKeyInfo pressedKey = Console.ReadKey();
