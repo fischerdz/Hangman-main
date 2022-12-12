@@ -10,7 +10,7 @@ namespace Hangman
     {
         static void Main(string[] args)
         {
-            Menu mainMenu = new Menu();
+            var mainMenu = new Menu();
             mainMenu.DisplayMainMenu();
         }
     }

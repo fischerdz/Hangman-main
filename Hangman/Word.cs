@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Text.RegularExpressions;
 
 namespace Hangman
 {
@@ -26,8 +25,8 @@ namespace Hangman
         // Loads list of words from csv and returns them in a list.
         public static List<string> LoadList()
         {
-            List<string> wordList = new List<string>();
-            string path = Path.Combine(Environment.CurrentDirectory, "Wordlist.csv");
+            var wordList = new List<string>();
+            var path = Path.Combine(Environment.CurrentDirectory, "Wordlist.csv");
             using (var reader = new StreamReader(@path))
             {
                 while (!reader.EndOfStream)
@@ -44,9 +43,9 @@ namespace Hangman
         // picks random word from loaded list
         public static List<char> PickWord() 
         {
-            Random rnd = new Random();
-            List<string> wordString = LoadList();
-            List<char> wordLetters = new List<char>();
+            var rnd = new Random();
+            var wordString = LoadList();
+            var wordLetters = new List<char>();
             wordLetters.AddRange(wordString[rnd.Next(wordString.Count())]);
             return wordLetters;
         }

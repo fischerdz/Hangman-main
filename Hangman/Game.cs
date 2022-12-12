@@ -60,9 +60,8 @@ namespace Hangman
             if (lives == 0)
             {
                 Console.WriteLine("You lost! \nThe word was " + String.Join("", gameWord.GetWordLetters()));
-
             }
-            Thread.Sleep(5000);
+            Thread.Sleep(3000);
             Console.Clear();
             Menu mainMenu = new Menu();
             mainMenu.DisplayMainMenu();
@@ -71,8 +70,8 @@ namespace Hangman
         // draws the word with correctly guessed letters (* for unguessed ones)
         public int DrawLetters()
         {
-            int rightChars = 0;
-            List<char> letters = new List<char>();
+            var rightChars = 0;
+            var letters = new List<char>();
             foreach (var i in gameWord.GetWordLetters())
             {
 
